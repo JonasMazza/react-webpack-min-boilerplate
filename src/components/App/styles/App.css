@@ -1,0 +1,23 @@
+@font-face {
+  font-family: 'shinkregular';
+  src: url('../assets/fonts/shink-webfont.woff2') format('woff2'),
+       url('../assets/fonts/shink-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.greeting {
+  display: flex;
+  flex-direction: column;
+}
+
+.greeting h1 {
+  color: red;
+  font-size: 64px;
+  text-align: center;
+  font-family: 'shinkregular';
+}
+
+.greeting img {
+  margin: 10px auto;
+}
