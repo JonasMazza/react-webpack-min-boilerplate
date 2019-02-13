@@ -13,7 +13,9 @@ app.use(webpackDevMiddleware(compiler, {
   publicPath: config.output.publicPath,
 }));
 
-app.use(webpackHotMiddleware(compiler));
+app.use(webpackHotMiddleware(compiler, {
+  path: `${config.output.publicPath}__hot_reload`
+}));
 
 app.listen(config.devServer.port, () => {
   // eslint-disable-next-line no-console
