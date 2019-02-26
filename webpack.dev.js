@@ -4,7 +4,7 @@ const common = require("./webpack.common.js");
 
 module.exports = merge(common, {
   entry: [
-    "webpack-hot-middleware/client?reload=true&quiet=true"
+    `webpack-hot-middleware/client?path=${common.output.publicPath}__hot_reload`
   ],
   mode: "development",
   module: {
@@ -16,7 +16,9 @@ module.exports = merge(common, {
     ]
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NoEmitOnErrorsPlugin()
   ],
   devtool: "eval",
   devServer: {
